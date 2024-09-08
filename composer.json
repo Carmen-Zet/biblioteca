@@ -1,0 +1,44 @@
+{
+    "name": "codeigniter4/appstarter",
+    "type": "project",
+    "description": "A starter template for CodeIgniter 4 framework",
+    "homepage": "https://codeigniter.com",
+    "license": "MIT",
+    "require": {
+        "php": "^7.3 || ^8.0",  
+        "codeigniter4/framework": "^4",  
+        "firebase/php-jwt": "^6.3",  
+        "phpmailer/phpmailer": "^6.5", 
+        "intervention/image": "^2.7"  
+    },
+    "require-dev": {
+        "mikey179/vfsstream": "1.6.8",  
+        "phpunit/phpunit": "^9"  
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "app/Helpers/my_helper.php" 
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Support\\": "tests/_support"
+        }
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "php spark migrate --all"
+        ],
+        "post-install-cmd": [
+            "php spark migrate --all"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "platform-check": false,
+        "optimize-autoloader": true
+    }
+}
